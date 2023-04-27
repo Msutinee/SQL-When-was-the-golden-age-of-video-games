@@ -191,37 +191,6 @@ LIMIT 10;
 
 
 
-
-```python
-%%nose
-from decimal import Decimal as D
-last_output = _
-
-def test_output_type():
-    assert str(type(last_output)) == "<class 'sql.run.ResultSet'>", \
-    "Please ensure an SQL ResultSet is the output of the code cell." 
-
-results = last_output.DataFrame()
-
-def test_results():
-    assert results.shape == (10, 6), \
-    "The results should have six columns and ten rows."
-    assert results.columns.tolist() == ["game", "platform", "publisher", "developer", "games_sold", "year"], \
-    'The results should have columns named "game", "platform", "publisher", "developer", "games_sold", and "year".'
-    assert _.DataFrame().loc[0, 'games_sold'] == D('82.90')
-    "The top selling game should be Wii Sports with 82.90 million copies sold."
-```
-
-
-
-
-
-
-    2/2 tests passed
-
-
-
-
 ## 2. Missing review scores
 <p>Wow, the best-selling video games were released between 1985 to 2017! That's quite a range; we'll have to use data from the <code>reviews</code> table to gain more insight on the best years for video games. </p>
 <p>First, it's important to explore the limitations of our database. One big shortcoming is that there is not any <code>reviews</code> data for some of the games on the <code>game_sales</code> table. </p>
